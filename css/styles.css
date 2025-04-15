@@ -1,5 +1,3 @@
-/* Rest */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -136,6 +134,7 @@ input:focus {
 	grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
 	gap: 2rem;
 	list-style: none;
+	justify-items: center;
 }
 
 .member-card {
