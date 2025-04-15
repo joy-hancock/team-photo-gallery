@@ -1,0 +1,188 @@
+/* Rest */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	font-family: 'Comic Neue', cursive;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	appearance: none;
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/* Custom styles */
+body {
+	margin: 0;
+	background-color: #59c3c3;
+}
+
+.body-wrapper {
+	padding: 4rem;
+	height: 90vh;
+	width: 70vw;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	margin-block-end: 4rem;
+}
+
+.input-container {
+	width: 50%;
+}
+
+input {
+	height: 3rem;
+	width: 100%;
+	border-radius: 50px;
+	padding: 2rem;
+	font-size: 2rem;
+	transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+	outline-offset: 0.1ex;
+	outline: 3px solid #f45b69;
+}
+
+.member-gallery {
+	display: grid;
+	padding: 0;
+	margin: 0 auto;
+	grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+	gap: 2rem;
+	list-style: none;
+}
+
+.member-card {
+	max-width: 20rem;
+	background-color: #fff;
+	border-radius: 0.5em;
+	padding: 1rem;
+}
+
+.member-gallery img {
+	--gallery-aspect-ratio: 4/3;
+	--gallery-height: 2rem;
+	width: 100%;
+	object-fit: contain;
+	height: var(--gallery-height);
+	border-radius: 0.5em;
+	background-color: #f45b69;
+	padding: 0.5rem;
+}
+
+img[data-img='nicolas'] {
+	object-fit: cover;
+}
+
+@supports (aspect-ratio: 1) {
+	.member-gallery img {
+		aspect-ratio: var(--gallery-aspect-ratio);
+
+		/* Remove height to prevent distorting aspect-ratio */
+		height: auto;
+	}
+}
+
+.card-content * + * {
+	margin-block-start: 1rem;
+}
+
+.card-content * {
+	text-align: center;
+}
+h1 {
+	font-size: 1.75rem;
+}
+h2 {
+	font-size: 1.25rem;
+}
+
+p {
+	font-size: 1rem;
+}
