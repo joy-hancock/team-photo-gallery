@@ -131,14 +131,13 @@ input:focus {
 	display: grid;
 	padding: 0;
 	margin: 0 auto;
-	grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
 	gap: 2rem;
 	list-style: none;
 	justify-items: center;
 }
 
 .member-card {
-	max-width: 20rem;
 	background-color: #fff;
 	border-radius: 0.5em;
 	padding: 1rem;
@@ -168,13 +167,16 @@ img[data-img='nicolas'] {
 	}
 }
 
-.card-content * + * {
-	margin-block-start: 1rem;
+.card-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .card-content * {
 	text-align: center;
 }
+
 h1 {
 	font-size: 1.75rem;
 }
